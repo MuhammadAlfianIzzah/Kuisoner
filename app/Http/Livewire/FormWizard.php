@@ -180,7 +180,7 @@ class FormWizard extends Component
     public $currentStep = 1;
     public function mount()
     {
-        $this->currentStep = 5;
+        $this->currentStep = 1;
     }
     public function increaseStep()
     {
@@ -220,7 +220,7 @@ class FormWizard extends Component
             $cp = Company::updateOrCreate(["id_mhs" => $this->user_id], $data->toArray());
             $tracer = $data->put("id_company", $cp->id)->toArray();
             TKuisoner::updateOrCreate(["id_mhs" => $this->user_id], $tracer);
-            redirect("/terima-kasih");
+            return  redirect()->route("finish-kuis");
         }
     }
     public function validateData()
