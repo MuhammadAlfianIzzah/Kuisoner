@@ -6,6 +6,7 @@ use App\Models\Company;
 use App\Models\KodeProdi;
 use App\Models\Mahasiswa;
 use App\Models\TKuisoner;
+use Illuminate\Support\Facades\Redirect;
 use Livewire\Component;
 
 class FormWizard extends Component
@@ -220,7 +221,7 @@ class FormWizard extends Component
             $cp = Company::updateOrCreate(["id_mhs" => $this->user_id], $data->toArray());
             $tracer = $data->put("id_company", $cp->id)->toArray();
             TKuisoner::updateOrCreate(["id_mhs" => $this->user_id], $tracer);
-            return  redirect()->route("finish-kuis");
+            return  Redirect::route("finish-kuis");
         }
     }
     public function validateData()
