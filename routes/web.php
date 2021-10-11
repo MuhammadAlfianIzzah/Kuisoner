@@ -24,6 +24,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 })->name("home");
+Route::get("/terima-kasih", function () {
+    return view("page.kuisoner.finish");
+})->name("finish-kuis");
 
 use Maatwebsite\Excel\Facades\Excel;
 
