@@ -56,10 +56,9 @@
 
     @endif
     <form class="row g-3 px-3 py-2" method="POST" wire:submit.prevent="register">
-
-
-        @method("POST")
         @csrf
+        @method("POST")
+
         @if ($currentStep == 1)
         {{-- data diri --}}
         <div class="col-md-6 p-3 border_custom3">
