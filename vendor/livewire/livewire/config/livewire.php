@@ -54,7 +54,7 @@ return [
     |
     */
 
-    'asset_url' => "http://kuisoneruho.genbisultra.com/",
+    'asset_url' => "http://kuisoneruho.genbisultra.com",
     // 'asset_url' => null,
 
     /*
